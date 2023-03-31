@@ -1,19 +1,19 @@
-import { createRenderer } from 'file:///home/andros/workspace/pets/idegram/node_modules/vue-bundle-renderer/dist/runtime.mjs';
-import { eventHandler, getQuery, createError, appendHeader } from 'file:///home/andros/workspace/pets/idegram/node_modules/h3/dist/index.mjs';
-import { joinURL } from 'file:///home/andros/workspace/pets/idegram/node_modules/ufo/dist/index.mjs';
-import { renderToString } from 'file:///home/andros/workspace/pets/idegram/node_modules/vue/server-renderer/index.mjs';
+import { createRenderer } from 'file:///Users/mj/Documents/idegram-2/node_modules/vue-bundle-renderer/dist/runtime.mjs';
+import { eventHandler, setResponseStatus, getQuery, createError, appendHeader } from 'file:///Users/mj/Documents/idegram-2/node_modules/h3/dist/index.mjs';
+import { joinURL } from 'file:///Users/mj/Documents/idegram-2/node_modules/ufo/dist/index.mjs';
+import { renderToString } from 'file:///Users/mj/Documents/idegram-2/node_modules/vue/server-renderer/index.mjs';
 import { u as useNitroApp, a as useRuntimeConfig, g as getRouteRules } from './nitro/nitro-prerenderer.mjs';
-import 'file:///home/andros/workspace/pets/idegram/node_modules/node-fetch-native/dist/polyfill.mjs';
-import 'file:///home/andros/workspace/pets/idegram/node_modules/ofetch/dist/node.mjs';
-import 'file:///home/andros/workspace/pets/idegram/node_modules/destr/dist/index.mjs';
-import 'file:///home/andros/workspace/pets/idegram/node_modules/unenv/runtime/fetch/index.mjs';
-import 'file:///home/andros/workspace/pets/idegram/node_modules/hookable/dist/index.mjs';
-import 'file:///home/andros/workspace/pets/idegram/node_modules/scule/dist/index.mjs';
-import 'file:///home/andros/workspace/pets/idegram/node_modules/defu/dist/defu.mjs';
-import 'file:///home/andros/workspace/pets/idegram/node_modules/ohash/dist/index.mjs';
-import 'file:///home/andros/workspace/pets/idegram/node_modules/unstorage/dist/index.mjs';
-import 'file:///home/andros/workspace/pets/idegram/node_modules/unstorage/drivers/fs.mjs';
-import 'file:///home/andros/workspace/pets/idegram/node_modules/radix3/dist/index.mjs';
+import 'file:///Users/mj/Documents/idegram-2/node_modules/node-fetch-native/dist/polyfill.mjs';
+import 'file:///Users/mj/Documents/idegram-2/node_modules/ofetch/dist/node.mjs';
+import 'file:///Users/mj/Documents/idegram-2/node_modules/destr/dist/index.mjs';
+import 'file:///Users/mj/Documents/idegram-2/node_modules/unenv/runtime/fetch/index.mjs';
+import 'file:///Users/mj/Documents/idegram-2/node_modules/hookable/dist/index.mjs';
+import 'file:///Users/mj/Documents/idegram-2/node_modules/scule/dist/index.mjs';
+import 'file:///Users/mj/Documents/idegram-2/node_modules/defu/dist/defu.mjs';
+import 'file:///Users/mj/Documents/idegram-2/node_modules/ohash/dist/index.mjs';
+import 'file:///Users/mj/Documents/idegram-2/node_modules/unstorage/dist/index.mjs';
+import 'file:///Users/mj/Documents/idegram-2/node_modules/unstorage/drivers/fs.mjs';
+import 'file:///Users/mj/Documents/idegram-2/node_modules/radix3/dist/index.mjs';
 
 function defineRenderHandler(handler) {
   return eventHandler(async (event) => {
@@ -40,12 +40,7 @@ function defineRenderHandler(handler) {
       for (const header in response.headers) {
         event.node.res.setHeader(header, response.headers[header]);
       }
-      if (response.statusCode) {
-        event.node.res.statusCode = response.statusCode;
-      }
-      if (response.statusMessage) {
-        event.node.res.statusMessage = response.statusMessage;
-      }
+      setResponseStatus(event, response.statusCode, response.statusMessage);
     }
     return typeof response.body === "string" ? response.body : JSON.stringify(response.body);
   });

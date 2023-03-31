@@ -1,5 +1,5 @@
 
-import { defuFn } from '/home/andros/workspace/pets/idegram/node_modules/defu/dist/defu.mjs'
+import { defuFn } from '/Users/mj/Documents/idegram-2/node_modules/defu/dist/defu.mjs'
 
 const inlineConfig = {}
 

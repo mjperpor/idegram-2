@@ -1,24 +1,24 @@
-import { getCurrentInstance, version, inject, ref, watchEffect, watch, useSSRContext, createApp, reactive, unref, isRef, provide, onErrorCaptured, onServerPrefetch, toRef, shallowRef, computed, isReadonly, defineAsyncComponent, withCtx, createVNode, nextTick, defineComponent, h, Suspense, Transition } from 'file:///home/andros/workspace/pets/idegram/node_modules/vue/index.mjs';
-import { $fetch } from 'file:///home/andros/workspace/pets/idegram/node_modules/ofetch/dist/node.mjs';
-import { createHooks } from 'file:///home/andros/workspace/pets/idegram/node_modules/hookable/dist/index.mjs';
-import { getContext, executeAsync } from 'file:///home/andros/workspace/pets/idegram/node_modules/unctx/dist/index.mjs';
-import { renderSSRHead } from 'file:///home/andros/workspace/pets/idegram/node_modules/@unhead/ssr/dist/index.mjs';
-import { getActiveHead, createServerHead as createServerHead$1 } from 'file:///home/andros/workspace/pets/idegram/node_modules/unhead/dist/index.mjs';
-import { HasElementTags, defineHeadPlugin } from 'file:///home/andros/workspace/pets/idegram/node_modules/@unhead/shared/dist/index.mjs';
-import { createMemoryHistory, createRouter, useRoute as useRoute$1, RouterView } from 'file:///home/andros/workspace/pets/idegram/node_modules/vue-router/dist/vue-router.node.mjs';
-import { sendRedirect, createError as createError$1 } from 'file:///home/andros/workspace/pets/idegram/node_modules/h3/dist/index.mjs';
-import { hasProtocol, parseURL, joinURL, isEqual } from 'file:///home/andros/workspace/pets/idegram/node_modules/ufo/dist/index.mjs';
-import { ssrRenderSuspense, ssrRenderComponent } from 'file:///home/andros/workspace/pets/idegram/node_modules/vue/server-renderer/index.mjs';
-import { defu } from 'file:///home/andros/workspace/pets/idegram/node_modules/defu/dist/defu.mjs';
+import { version, getCurrentInstance, inject, ref, watchEffect, watch, useSSRContext, createApp, reactive, unref, isRef, provide, onErrorCaptured, onServerPrefetch, toRef, shallowRef, computed, isReadonly, defineAsyncComponent, withCtx, createVNode, nextTick, defineComponent, h, Suspense, Transition } from 'file:///Users/mj/Documents/idegram-2/node_modules/vue/index.mjs';
+import { $fetch } from 'file:///Users/mj/Documents/idegram-2/node_modules/ofetch/dist/node.mjs';
+import { createHooks } from 'file:///Users/mj/Documents/idegram-2/node_modules/hookable/dist/index.mjs';
+import { getContext, executeAsync } from 'file:///Users/mj/Documents/idegram-2/node_modules/unctx/dist/index.mjs';
+import { renderSSRHead } from 'file:///Users/mj/Documents/idegram-2/node_modules/@unhead/ssr/dist/index.mjs';
+import { getActiveHead, createServerHead as createServerHead$1 } from 'file:///Users/mj/Documents/idegram-2/node_modules/unhead/dist/index.mjs';
+import { HasElementTags, defineHeadPlugin } from 'file:///Users/mj/Documents/idegram-2/node_modules/@unhead/shared/dist/index.mjs';
+import { createMemoryHistory, createRouter, useRoute as useRoute$1, RouterView } from 'file:///Users/mj/Documents/idegram-2/node_modules/vue-router/dist/vue-router.node.mjs';
+import { sendRedirect, createError as createError$1 } from 'file:///Users/mj/Documents/idegram-2/node_modules/h3/dist/index.mjs';
+import { hasProtocol, parseURL, joinURL, isEqual } from 'file:///Users/mj/Documents/idegram-2/node_modules/ufo/dist/index.mjs';
+import { ssrRenderSuspense, ssrRenderComponent } from 'file:///Users/mj/Documents/idegram-2/node_modules/vue/server-renderer/index.mjs';
+import { defu } from 'file:///Users/mj/Documents/idegram-2/node_modules/defu/dist/defu.mjs';
 import { a as useRuntimeConfig$1 } from '../nitro/nitro-prerenderer.mjs';
-import 'file:///home/andros/workspace/pets/idegram/node_modules/node-fetch-native/dist/polyfill.mjs';
-import 'file:///home/andros/workspace/pets/idegram/node_modules/destr/dist/index.mjs';
-import 'file:///home/andros/workspace/pets/idegram/node_modules/unenv/runtime/fetch/index.mjs';
-import 'file:///home/andros/workspace/pets/idegram/node_modules/scule/dist/index.mjs';
-import 'file:///home/andros/workspace/pets/idegram/node_modules/ohash/dist/index.mjs';
-import 'file:///home/andros/workspace/pets/idegram/node_modules/unstorage/dist/index.mjs';
-import 'file:///home/andros/workspace/pets/idegram/node_modules/unstorage/drivers/fs.mjs';
-import 'file:///home/andros/workspace/pets/idegram/node_modules/radix3/dist/index.mjs';
+import 'file:///Users/mj/Documents/idegram-2/node_modules/node-fetch-native/dist/polyfill.mjs';
+import 'file:///Users/mj/Documents/idegram-2/node_modules/destr/dist/index.mjs';
+import 'file:///Users/mj/Documents/idegram-2/node_modules/unenv/runtime/fetch/index.mjs';
+import 'file:///Users/mj/Documents/idegram-2/node_modules/scule/dist/index.mjs';
+import 'file:///Users/mj/Documents/idegram-2/node_modules/ohash/dist/index.mjs';
+import 'file:///Users/mj/Documents/idegram-2/node_modules/unstorage/dist/index.mjs';
+import 'file:///Users/mj/Documents/idegram-2/node_modules/unstorage/drivers/fs.mjs';
+import 'file:///Users/mj/Documents/idegram-2/node_modules/radix3/dist/index.mjs';
 
 const appConfig = useRuntimeConfig$1().app;
 const baseURL = () => appConfig.baseURL;
@@ -340,11 +340,6 @@ function useRequestEvent(nuxtApp = useNuxtApp()) {
   var _a;
   return (_a = nuxtApp.ssrContext) == null ? void 0 : _a.event;
 }
-function useRequestFetch() {
-  var _a;
-  const event = (_a = useNuxtApp().ssrContext) == null ? void 0 : _a.event;
-  return (event == null ? void 0 : event.$fetch) || globalThis.$fetch;
-}
 function setResponseStatus(code, message) {
   const event = useRequestEvent();
   if (event) {
@@ -434,7 +429,7 @@ const _routes = [
     meta: {},
     alias: [],
     redirect: void 0,
-    component: () => import('./_nuxt/blog-2cb5e053.mjs').then((m) => m.default || m)
+    component: () => import('./_nuxt/blog-0b1ecf3c.mjs').then((m) => m.default || m)
   },
   {
     name: "index",
@@ -442,7 +437,7 @@ const _routes = [
     meta: {},
     alias: [],
     redirect: void 0,
-    component: () => import('./_nuxt/index-4881e2ca.mjs').then((m) => m.default || m)
+    component: () => import('./_nuxt/index-288c4aed.mjs').then((m) => m.default || m)
   },
   {
     name: "single-id",
@@ -450,7 +445,7 @@ const _routes = [
     meta: {},
     alias: [],
     redirect: void 0,
-    component: () => import('./_nuxt/_id_-c53bf5e9.mjs').then((m) => m.default || m)
+    component: () => import('./_nuxt/_id_-883883d0.mjs').then((m) => m.default || m)
   }
 ];
 const routerOptions0 = {
@@ -674,7 +669,9 @@ const Fragment = /* @__PURE__ */ defineComponent({
 const _wrapIf = (component, props, slots) => {
   return { default: () => props ? h(component, props === true ? {} : props, slots) : h(Fragment, {}, slots) };
 };
-const layouts = {};
+const layouts = {
+  default: () => import('./_nuxt/default-7877104c.mjs').then((m) => m.default || m)
+};
 const LayoutLoader = /* @__PURE__ */ defineComponent({
   name: "LayoutLoader",
   inheritAttrs: false,
@@ -856,7 +853,7 @@ const _sfc_main = {
   __name: "nuxt-root",
   __ssrInlineRender: true,
   setup(__props) {
-    const ErrorComponent = /* @__PURE__ */ defineAsyncComponent(() => import('./_nuxt/error-component-bcc52492.mjs').then((r) => r.default || r));
+    const ErrorComponent = /* @__PURE__ */ defineAsyncComponent(() => import('./_nuxt/error-component-0785a560.mjs').then((r) => r.default || r));
     const IslandRenderer = /* @__PURE__ */ defineAsyncComponent(() => import('./_nuxt/island-renderer-1d07fad8.mjs').then((r) => r.default || r));
     const nuxtApp = useNuxtApp();
     nuxtApp.deferHydration();
@@ -917,5 +914,5 @@ const plugins = normalizePlugins(_plugins);
 }
 const entry$1 = (ctx) => entry(ctx);
 
-export { _export_sfc as _, useRequestFetch as a, useRoute as b, createError as c, useHead as d, entry$1 as default, useRouter as e, navigateTo as n, useNuxtApp as u };
+export { _export_sfc as _, useHead as a, useRouter as b, createError as c, entry$1 as default, navigateTo as n, useRoute as u };
 //# sourceMappingURL=server.mjs.map

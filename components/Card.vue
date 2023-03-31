@@ -1,7 +1,15 @@
 <template>
-    <div>
-	<img alt="" :src="urlPublic" class="img">
-    </div>
+    <article>
+        <!-- Imagen -->
+        <div class="ratio ratio-1x1">
+            <img alt="" :src="urlPublic" class="img object-fit-cover border rounded">
+        </div>
+        <!-- Controles -->
+        <div class="d-flex justify-content-start">
+            <button @click="addLike" class="btn btn-outline-primary p-3" aria-current="page">♡ {{ likes }}</button>
+            <button class="btn btn-outline-primary p-3">💬</button>
+        </div>
+    </article>
 </template>
 
 <script setup>
@@ -12,18 +20,28 @@
  const supabase = createClient('https://jwjhesfrctbwxqukejwm.supabase.co', 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Imp3amhlc2ZyY3Rid3hxdWtlandtIiwicm9sZSI6ImFub24iLCJpYXQiOjE2Nzk1NjA4NzYsImV4cCI6MTk5NTEzNjg3Nn0.mc35BToVLVAkx-3eFDGYR3OlxuwA55w3RwDG6XnBMmY')
  const urlPublic = ref();
 
- const props = defineProps({
-     url: String
- })
+const props = defineProps({
+    id: Number, //aributos cuando declaramos el componente 
+    url: String,
+    likes: Number
+})
 
- onMounted(async () => {
-     const { data } = await supabase
-	 .storage
-	 .from('photos')
-	 .getPublicUrl(props.url);
-     urlPublic.value = data.publicUrl;
- })
+onMounted(async () => {
+    // Obtener la URL pública de la imagen
+    const { data } = await supabase
+        .storage
+        .from('photos')
+        .getPublicUrl(props.url);
+    urlPublic.value = data.publicUrl;
+        
+})
 
+async function addLike() {
+    const { error } = await supabase
+        .from('photos')
+        .update({likes: props.likes + 1})
+        .eq('id', props.id)
+}
 
 </script>
 

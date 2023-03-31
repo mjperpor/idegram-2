@@ -331,11 +331,6 @@ function useRequestEvent(nuxtApp = useNuxtApp()) {
   var _a;
   return (_a = nuxtApp.ssrContext) == null ? void 0 : _a.event;
 }
-function useRequestFetch() {
-  var _a;
-  const event = (_a = useNuxtApp().ssrContext) == null ? void 0 : _a.event;
-  return (event == null ? void 0 : event.$fetch) || globalThis.$fetch;
-}
 function setResponseStatus(code, message) {
   const event = useRequestEvent();
   if (event) {
@@ -425,7 +420,7 @@ const _routes = [
     meta: {},
     alias: [],
     redirect: void 0,
-    component: () => import("./_nuxt/blog-2cb5e053.js").then((m) => m.default || m)
+    component: () => import("./_nuxt/blog-0b1ecf3c.js").then((m) => m.default || m)
   },
   {
     name: "index",
@@ -433,7 +428,7 @@ const _routes = [
     meta: {},
     alias: [],
     redirect: void 0,
-    component: () => import("./_nuxt/index-4881e2ca.js").then((m) => m.default || m)
+    component: () => import("./_nuxt/index-288c4aed.js").then((m) => m.default || m)
   },
   {
     name: "single-id",
@@ -441,7 +436,7 @@ const _routes = [
     meta: {},
     alias: [],
     redirect: void 0,
-    component: () => import("./_nuxt/_id_-c53bf5e9.js").then((m) => m.default || m)
+    component: () => import("./_nuxt/_id_-883883d0.js").then((m) => m.default || m)
   }
 ];
 const routerOptions0 = {
@@ -665,7 +660,9 @@ const Fragment = /* @__PURE__ */ defineComponent({
 const _wrapIf = (component, props, slots) => {
   return { default: () => props ? h(component, props === true ? {} : props, slots) : h(Fragment, {}, slots) };
 };
-const layouts = {};
+const layouts = {
+  default: () => import("./_nuxt/default-7877104c.js").then((m) => m.default || m)
+};
 const LayoutLoader = /* @__PURE__ */ defineComponent({
   name: "LayoutLoader",
   inheritAttrs: false,
@@ -847,7 +844,7 @@ const _sfc_main = {
   __name: "nuxt-root",
   __ssrInlineRender: true,
   setup(__props) {
-    const ErrorComponent = /* @__PURE__ */ defineAsyncComponent(() => import("./_nuxt/error-component-bcc52492.js").then((r) => r.default || r));
+    const ErrorComponent = /* @__PURE__ */ defineAsyncComponent(() => import("./_nuxt/error-component-0785a560.js").then((r) => r.default || r));
     const IslandRenderer = /* @__PURE__ */ defineAsyncComponent(() => import("./_nuxt/island-renderer-1d07fad8.js").then((r) => r.default || r));
     const nuxtApp = useNuxtApp();
     nuxtApp.deferHydration();
@@ -909,13 +906,11 @@ const plugins = normalizePlugins(_plugins);
 const entry$1 = (ctx) => entry(ctx);
 export {
   _export_sfc as _,
-  useRequestFetch as a,
-  useRoute as b,
+  useHead as a,
+  useRouter as b,
   createError as c,
-  useHead as d,
   entry$1 as default,
-  useRouter as e,
   navigateTo as n,
-  useNuxtApp as u
+  useRoute as u
 };
 //# sourceMappingURL=server.mjs.map

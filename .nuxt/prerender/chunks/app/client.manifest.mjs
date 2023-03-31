@@ -1,11 +1,31 @@
 const client_manifest = {
-  "_nuxt-link.b66650eb.js": {
+  "_nuxt-link.0ad50bfb.js": {
     "resourceType": "script",
     "module": true,
-    "file": "nuxt-link.b66650eb.js",
+    "file": "nuxt-link.0ad50bfb.js",
     "imports": [
       "node_modules/nuxt/dist/app/entry.js"
     ]
+  },
+  "layouts/default.css": {
+    "resourceType": "style",
+    "file": "default.30bb28a7.css",
+    "src": "layouts/default.css"
+  },
+  "layouts/default.vue": {
+    "resourceType": "script",
+    "module": true,
+    "css": [],
+    "file": "default.14183349.js",
+    "imports": [
+      "node_modules/nuxt/dist/app/entry.js"
+    ],
+    "isDynamicEntry": true,
+    "src": "layouts/default.vue"
+  },
+  "default.30bb28a7.css": {
+    "file": "default.30bb28a7.css",
+    "resourceType": "style"
   },
   "node_modules/@nuxt/ui-templates/dist/templates/error-404.css": {
     "resourceType": "style",
@@ -16,9 +36,9 @@ const client_manifest = {
     "resourceType": "script",
     "module": true,
     "css": [],
-    "file": "error-404.54a3a00d.js",
+    "file": "error-404.4863be46.js",
     "imports": [
-      "_nuxt-link.b66650eb.js",
+      "_nuxt-link.0ad50bfb.js",
       "node_modules/nuxt/dist/app/entry.js"
     ],
     "isDynamicEntry": true,
@@ -37,7 +57,7 @@ const client_manifest = {
     "resourceType": "script",
     "module": true,
     "css": [],
-    "file": "error-500.7cd996d5.js",
+    "file": "error-500.f1b6f591.js",
     "imports": [
       "node_modules/nuxt/dist/app/entry.js"
     ],
@@ -52,57 +72,69 @@ const client_manifest = {
     "resourceType": "script",
     "module": true,
     "dynamicImports": [
-      "virtual:nuxt:/home/andros/workspace/pets/idegram/.nuxt/error-component.mjs"
+      "layouts/default.vue",
+      "virtual:nuxt:/Users/mj/Documents/idegram-2/.nuxt/error-component.mjs"
     ],
-    "file": "entry.d96bb2c1.js",
+    "file": "entry.6a2907d1.js",
     "isEntry": true,
     "src": "node_modules/nuxt/dist/app/entry.js"
   },
   "pages/blog.vue": {
     "resourceType": "script",
     "module": true,
-    "file": "blog.6731eb0d.js",
+    "file": "blog.9de2201d.js",
     "imports": [
-      "_nuxt-link.b66650eb.js",
+      "_nuxt-link.0ad50bfb.js",
       "node_modules/nuxt/dist/app/entry.js"
     ],
     "isDynamicEntry": true,
     "src": "pages/blog.vue"
   },
+  "pages/index.css": {
+    "resourceType": "style",
+    "file": "index.c988fb21.css",
+    "src": "pages/index.css"
+  },
   "pages/index.vue": {
     "resourceType": "script",
     "module": true,
-    "file": "index.b3d9e993.js",
+    "css": [
+      "index.c988fb21.css"
+    ],
+    "file": "index.d13c49f6.js",
     "imports": [
-      "_nuxt-link.b66650eb.js",
       "node_modules/nuxt/dist/app/entry.js"
     ],
     "isDynamicEntry": true,
     "src": "pages/index.vue"
   },
+  "index.c988fb21.css": {
+    "file": "index.c988fb21.css",
+    "resourceType": "style"
+  },
   "pages/single/[id].vue": {
     "resourceType": "script",
     "module": true,
-    "file": "_id_.937271d4.js",
+    "file": "_id_.dd8bf4ff.js",
     "imports": [
       "node_modules/nuxt/dist/app/entry.js"
     ],
     "isDynamicEntry": true,
     "src": "pages/single/[id].vue"
   },
-  "virtual:nuxt:/home/andros/workspace/pets/idegram/.nuxt/error-component.mjs": {
+  "virtual:nuxt:/Users/mj/Documents/idegram-2/.nuxt/error-component.mjs": {
     "resourceType": "script",
     "module": true,
     "dynamicImports": [
       "node_modules/@nuxt/ui-templates/dist/templates/error-404.vue",
       "node_modules/@nuxt/ui-templates/dist/templates/error-500.vue"
     ],
-    "file": "error-component.1fa943e9.js",
+    "file": "error-component.94d11065.js",
     "imports": [
       "node_modules/nuxt/dist/app/entry.js"
     ],
     "isDynamicEntry": true,
-    "src": "virtual:nuxt:/home/andros/workspace/pets/idegram/.nuxt/error-component.mjs"
+    "src": "virtual:nuxt:/Users/mj/Documents/idegram-2/.nuxt/error-component.mjs"
   }
 };
 

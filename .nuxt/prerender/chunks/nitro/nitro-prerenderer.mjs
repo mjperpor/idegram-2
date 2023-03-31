@@ -1,16 +1,16 @@
-import 'file:///home/andros/workspace/pets/idegram/node_modules/node-fetch-native/dist/polyfill.mjs';
-import { defineEventHandler, handleCacheHeaders, createEvent, eventHandler, setHeaders, sendRedirect, proxyRequest, getRequestHeader, getRequestHeaders, setResponseHeader, createApp, createRouter as createRouter$1, toNodeListener, fetchWithEvent, lazyEventHandler } from 'file:///home/andros/workspace/pets/idegram/node_modules/h3/dist/index.mjs';
-import { createFetch as createFetch$1, Headers } from 'file:///home/andros/workspace/pets/idegram/node_modules/ofetch/dist/node.mjs';
-import destr from 'file:///home/andros/workspace/pets/idegram/node_modules/destr/dist/index.mjs';
-import { createCall, createFetch } from 'file:///home/andros/workspace/pets/idegram/node_modules/unenv/runtime/fetch/index.mjs';
-import { createHooks } from 'file:///home/andros/workspace/pets/idegram/node_modules/hookable/dist/index.mjs';
-import { snakeCase } from 'file:///home/andros/workspace/pets/idegram/node_modules/scule/dist/index.mjs';
-import defu, { defuFn } from 'file:///home/andros/workspace/pets/idegram/node_modules/defu/dist/defu.mjs';
-import { hash } from 'file:///home/andros/workspace/pets/idegram/node_modules/ohash/dist/index.mjs';
-import { parseURL, withoutBase, joinURL, withQuery } from 'file:///home/andros/workspace/pets/idegram/node_modules/ufo/dist/index.mjs';
-import { createStorage, prefixStorage } from 'file:///home/andros/workspace/pets/idegram/node_modules/unstorage/dist/index.mjs';
-import unstorage_47drivers_47fs from 'file:///home/andros/workspace/pets/idegram/node_modules/unstorage/drivers/fs.mjs';
-import { toRouteMatcher, createRouter } from 'file:///home/andros/workspace/pets/idegram/node_modules/radix3/dist/index.mjs';
+import 'file:///Users/mj/Documents/idegram-2/node_modules/node-fetch-native/dist/polyfill.mjs';
+import { defineEventHandler, handleCacheHeaders, createEvent, eventHandler, setHeaders, sendRedirect, proxyRequest, getRequestHeader, getRequestHeaders, setResponseHeader, createApp, createRouter as createRouter$1, toNodeListener, fetchWithEvent, lazyEventHandler } from 'file:///Users/mj/Documents/idegram-2/node_modules/h3/dist/index.mjs';
+import { createFetch as createFetch$1, Headers } from 'file:///Users/mj/Documents/idegram-2/node_modules/ofetch/dist/node.mjs';
+import destr from 'file:///Users/mj/Documents/idegram-2/node_modules/destr/dist/index.mjs';
+import { createCall, createFetch } from 'file:///Users/mj/Documents/idegram-2/node_modules/unenv/runtime/fetch/index.mjs';
+import { createHooks } from 'file:///Users/mj/Documents/idegram-2/node_modules/hookable/dist/index.mjs';
+import { snakeCase } from 'file:///Users/mj/Documents/idegram-2/node_modules/scule/dist/index.mjs';
+import defu, { defuFn } from 'file:///Users/mj/Documents/idegram-2/node_modules/defu/dist/defu.mjs';
+import { hash } from 'file:///Users/mj/Documents/idegram-2/node_modules/ohash/dist/index.mjs';
+import { parseURL, withoutBase, joinURL, withQuery } from 'file:///Users/mj/Documents/idegram-2/node_modules/ufo/dist/index.mjs';
+import { createStorage, prefixStorage } from 'file:///Users/mj/Documents/idegram-2/node_modules/unstorage/dist/index.mjs';
+import unstorage_47drivers_47fs from 'file:///Users/mj/Documents/idegram-2/node_modules/unstorage/drivers/fs.mjs';
+import { toRouteMatcher, createRouter } from 'file:///Users/mj/Documents/idegram-2/node_modules/radix3/dist/index.mjs';
 
 const inlineAppConfig = {};
 
@@ -59,7 +59,7 @@ function deepFreeze(object) {
   return Object.freeze(object);
 }
 
-const serverAssets = [{"baseName":"server","dir":"/home/andros/workspace/pets/idegram/server/assets"}];
+const serverAssets = [{"baseName":"server","dir":"/Users/mj/Documents/idegram-2/server/assets"}];
 
 const assets = createStorage();
 
@@ -71,10 +71,10 @@ const storage = createStorage({});
 
 storage.mount('/assets', assets);
 
-storage.mount('root', unstorage_47drivers_47fs({"driver":"fs","readOnly":true,"base":"/home/andros/workspace/pets/idegram","ignore":["**/node_modules/**","**/.git/**"]}));
-storage.mount('src', unstorage_47drivers_47fs({"driver":"fs","readOnly":true,"base":"/home/andros/workspace/pets/idegram/server","ignore":["**/node_modules/**","**/.git/**"]}));
-storage.mount('build', unstorage_47drivers_47fs({"driver":"fs","readOnly":false,"base":"/home/andros/workspace/pets/idegram/.nuxt","ignore":["**/node_modules/**","**/.git/**"]}));
-storage.mount('cache', unstorage_47drivers_47fs({"driver":"fs","readOnly":false,"base":"/home/andros/workspace/pets/idegram/.nuxt/cache","ignore":["**/node_modules/**","**/.git/**"]}));
+storage.mount('root', unstorage_47drivers_47fs({"driver":"fs","readOnly":true,"base":"/Users/mj/Documents/idegram-2","ignore":["**/node_modules/**","**/.git/**"]}));
+storage.mount('src', unstorage_47drivers_47fs({"driver":"fs","readOnly":true,"base":"/Users/mj/Documents/idegram-2/server","ignore":["**/node_modules/**","**/.git/**"]}));
+storage.mount('build', unstorage_47drivers_47fs({"driver":"fs","readOnly":false,"base":"/Users/mj/Documents/idegram-2/.nuxt","ignore":["**/node_modules/**","**/.git/**"]}));
+storage.mount('cache', unstorage_47drivers_47fs({"driver":"fs","readOnly":false,"base":"/Users/mj/Documents/idegram-2/.nuxt/cache","ignore":["**/node_modules/**","**/.git/**"]}));
 
 function useStorage(base = "") {
   return base ? prefixStorage(storage, base) : storage;
@@ -452,10 +452,10 @@ const errorHandler = (async function errorhandler(error, event) {
   event.node.res.end(await res.text());
 });
 
-const _lazy_b9GxRr = () => import('../renderer.mjs');
+const _lazy_RHwFJg = () => import('../renderer.mjs');
 
 const handlers = [
-  { route: '/**', handler: _lazy_b9GxRr, lazy: true, middleware: false, method: undefined }
+  { route: '/**', handler: _lazy_RHwFJg, lazy: true, middleware: false, method: undefined }
 ];
 
 function createNitroApp() {
