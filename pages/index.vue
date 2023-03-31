@@ -2,9 +2,8 @@
     <div>
 		<!-- Loading -->
 		<Loading :show="verLoading"/>
-		<button type="button" class="btn btn-dark" @click="showModalNewPhoto = true">Subir foto</button>
+		<button type="button" class="btn btn-dark mb-3 mt-3" @click="showModalNewPhoto = true">Subir foto</button>
 		<!-- Listado de imágenes -->
-		<h1>Listado imagenes subidas</h1>
 		<Card v-for="photo in photos" :url="photo.url" :likes="photo.likes" :id="photo.id"/>
 			<!-- Modal para subir una imagen nueva -->
 			<div class="modal" tabindex="-1" :class="{'d-block': showModalNewPhoto}">
